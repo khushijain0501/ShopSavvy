@@ -10,12 +10,12 @@ import { redirect } from "next/navigation";
 import React from "react";
 
 type Props = {
-  params: Promise<{
+  params: {
     id: string;
-  }>;
+  };
 };
-async function ProductDetail({params}:{params: Props}){
-  const {id}=await params.params
+async function ProductDetail({params}: Props){
+  const {id}=params
   console.log(id)
   const product: Product = await getProductById(id);
 
