@@ -14,8 +14,9 @@ type Props = {
     id: string;
   }>;
 };
-async function ProductDetail({ params}: Props){
-  const id=(await params).id
+async function ProductDetail({params}:{params: Props}){
+  const {id}=await params.params
+  console.log(id)
   const product: Product = await getProductById(id);
 
   if (!product){ redirect("/"); 
