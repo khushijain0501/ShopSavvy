@@ -14,9 +14,9 @@
 // export default nextConfig;
 
 /** @type {import('next').NextConfig} */
-const nextConfig: import('next').NextConfig = {
+const nextConfig= {
   experimental: {
-    serverActions: true,
+    serverActions:true,
     serverComponentsExternalPackages: ['mongoose']
   },
   images: {
