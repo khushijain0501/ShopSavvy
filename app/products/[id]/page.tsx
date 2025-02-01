@@ -14,7 +14,8 @@ import React from "react";
 //     id: string;
 //   };
 // };
-async function ProductDetail({params}: {params:{id:string}}){
+async function ProductDetail(props: {params: Promise<{id:string}>}) {
+  const params = await props.params;
   const {id}=params
   console.log(id)
   const product: Product = await getProductById(id);
