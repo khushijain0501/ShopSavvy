@@ -5,9 +5,13 @@ import { scrapeAmazonProduct } from "@/lib/scraper";
 import { getAveragePrice, getEmailNotifType, getHighestPrice, getLowestPrice } from "@/lib/scraper/utils";
 import { NextResponse } from "next/server";
 
+export const maxDuration=300 ;
+export const dynamic='force-dynamic';
+export const revalidate=0;
+
  export async function GET() {
     try {
-        connectToDB();
+        await connectToDB();
         const products=await Product.find({});
         
         if(!products) throw new Error("No products found");
@@ -31,7 +35,7 @@ import { NextResponse } from "next/server";
             }
         
         const updatedProduct=await Product.findOneAndUpdate({
-            url:scrapedProduct.url},
+            url:product.url},
             product,
         )
 

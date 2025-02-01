@@ -4,9 +4,9 @@ import React from 'react'
 
 const Navbar = () => {
     const navIcons=[
-        {src:'assets/icons/search.svg',alt:'search'},
-        {src:'assets/icons/black-heart.svg',alt:'black-heart'},
-        {src:'assets/icons/user.svg',alt:'user'},
+        {src:'/assets/icons/search.svg',alt:'search'},
+        {src:'/assets/icons/black-heart.svg',alt:'black-heart'},
+        {src:'/assets/icons/user.svg',alt:'user'},
     ]
   return (
     <header className='w-full '>
@@ -20,10 +20,11 @@ const Navbar = () => {
                 />
             </Link>
             <p className='nav-logo'>
-                    Price<span className='text-primary'>Wise</span>
+                    Shop<span className='text-primary'>Savvy</span>
                 </p>
                 <div className='flex justify-end items-center w-full gap-5'>
                     {navIcons.map((icon)=>{
+                        // console.log(icon.src)
                         return(
                             <Image key={icon.src} src={icon.src} alt={icon.alt} width={27} height={27} className='object-contain'/>
                         )
