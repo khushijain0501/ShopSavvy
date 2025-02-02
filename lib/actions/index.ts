@@ -10,7 +10,7 @@ import { revalidatePath } from "next/cache";
 import { getAveragePrice, getHighestPrice, getLowestPrice } from "../scraper/utils";
 import { generateEmailBody, sendEmail } from "../nodemailer";
 
-export const maxDuration=60;
+// export const maxDuration=60;
 
 export async function scrapeAndStoreProduct(productUrl:string){
     if(!productUrl)
